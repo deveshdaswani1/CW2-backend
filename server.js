@@ -111,7 +111,7 @@ MongoClient.connect(connectionString, (err, client) => {
         // Update lesson spaces
         const lessonsToUpdate = order.cartProduct.map((lesson) => ({
           updateOne: {
-            filter: { _id: ObjectId(lesson.id) }, // Update this line
+            filter: { _id: ObjectId(lesson._id) }, // Update this line
             update: { $inc: { space: -1 } }
           }
         }));
